@@ -1,0 +1,14 @@
+<h1>Edit <%= @comic.name %></h1>
+
+<%= render('layouts/errors', object: @comic) %>
+
+<form action="/comics/<%= @comic.id %>" method="post">
+  <input name="_method" type="hidden" value="patch">
+  <label for="comic_name">Title</label>
+  <input id="comic_name" name="comic[name]" type="text" value="<%= @comic.name %>">
+  <label for="comic_issue">Issue Number</label>
+  <input id="comic_issue" name="comic[issue]" type="text" value="<%= @comic.issue %>">
+  <button>Update Comic</button>
+</form>
+
+<a href="/"><button>Home</button></a>

@@ -1,0 +1,9 @@
+<h1>Long Box Comic Collection Manager</h1>
+
+<ul>
+  <% @comics.each do |comic| %>
+    <a href="/comics/<%= comic.id %>"><li><%= comic.name %> # <%= comic.issue %></li></a>
+  <% end %>
+</ul>
+
+<a href="/comics/new"><button>Add a New Comic</button></a>
