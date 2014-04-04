@@ -1,0 +1,10 @@
+
+development:
+  adapter: postgresql
+  database: long_box_development
+
+test:
+  adapter: postgresql
+  database: long_box_test
+
+
