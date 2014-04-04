@@ -1,0 +1,11 @@
+<h1>Add a New Artist</h1>
+
+<%= render('layouts/errors', object: @artist) %>
+
+<form action="/artists" method="post">
+  <label for="artist_name">Title</label>
+  <input id="artist_name" name="artist[name]" type="text">
+  <button>Add artist</button>
+</form>
+
+<a href="/"><button>Home</button></a>
