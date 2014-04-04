@@ -1,0 +1,10 @@
+<h1>Writers</h1>
+
+<ul>
+  <% @writers.each do |writer| %>
+    <a href="/writers/<%= writer.id %>"><li><%= writer.name %></li></a>
+  <% end %>
+</ul>
+
+<a href="/writers/new"><button>Add a New Writer</button></a>
+<a href="/"><button>Home</button></a>

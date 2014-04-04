@@ -8,6 +8,26 @@
   <input id="comic_name" name="comic[name]" type="text" value="<%= @comic.name %>">
   <label for="comic_issue">Issue Number</label>
   <input id="comic_issue" name="comic[issue]" type="text" value="<%= @comic.issue %>">
+
+<br><p>Artists of <%= @comic.name %></p>
+  <% @artists.each do |artist| %>
+    <% if @comic.artists.include?(artist) %>
+      <input type="checkbox" name="artist_ids[]" value="<%= artist.id %>" checked><%= artist.name %>
+    <% else %>
+      <input type="checkbox" name="artist_ids[]" value="<%= artist.id %>"><%= artist.name %>
+    <% end %>
+  <% end %>
+<br>
+<p>Writers of <%= @comic.name %></p>
+  <% @writers.each do |writer| %>
+    <% if @comic.writers.include?(writer) %>
+      <input type="checkbox" name="writer_ids[]" value="<%= writer.id %>" checked><%= writer.name %>
+    <% else %>
+      <input type="checkbox" name="writer_ids[]" value="<%= writer.id %>"><%= writer.name %>
+    <% end %>
+  <% end %>
+<br>
+<br>
   <button>Update Comic</button>
 </form>
 

@@ -5,12 +5,22 @@ class ComicsController < ApplicationController
   end
 
   def new
+    @artists = Artist.all
+    @writers = Writer.all
     @comic = Comic.new
     render('comics/new.html.erb')
   end
 
   def create
     @comic = Comic.new(params[:comic])
+    @artists = Artist.where(:id => params[:artist_ids])
+    @artists.each do |artist|
+      @comic.artists << artist
+    end
+    @writers = Writer.where(:id => params[:writer_ids])
+    @writers.each do |writer|
+      @comic.writers << writer
+    end
     if @comic.save
       redirect_to("/comics/#{@comic.id}")
     else
@@ -25,11 +35,25 @@ class ComicsController < ApplicationController
 
   def edit
     @comic = Comic.find(params[:id])
+    @artists = Artist.all
+    @writers = Writer.all
     render('comics/edit.html.erb')
   end
 
   def update
+    @artists = Artist.all
+    @writer = Writer.all
     @comic = Comic.find(params[:id])
+    @artist_objects = Artist.where(:id => params[:artist_ids])
+    @writer_objects = Writer.where(:id => params[:writer_ids])
+    @comic.artists = []
+    @comic.writers = []
+    @artist_objects.each do |artist|
+      @comic.artists << artist
+    end
+    @writer_objects.each do |writer|
+      @comic.writers << writer
+    end
     if @comic.update(params[:comic])
       flash[:notice] = "Comic Updated!"
       redirect_to("/comics/#{@comic.id}")

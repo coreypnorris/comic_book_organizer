@@ -1,0 +1,11 @@
+<h1>Add a New Writer</h1>
+
+<%= render('layouts/errors', object: @writer) %>
+
+<form action="/writers" method="post">
+  <label for="writer_name">Title</label>
+  <input id="writer_name" name="writer[name]" type="text">
+  <button>Add Writer</button>
+</form>
+
+<a href="/"><button>Home</button></a>

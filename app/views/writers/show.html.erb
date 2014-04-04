@@ -1,12 +1,13 @@
-<h1><%= @artist.name %></h1>
+<h1><%= @writer.name %></h1>
 
-<% @artist.comics.each do |comic| %>
+<% @writer.comics.each do |comic| %>
   <%= comic.name %> <%= comic.issue %>
   <br>
 <% end %>
 <br>
-<a href="/artists/<%= @artist.id %>/edit"><button>Edit</button></a>
-<a href="/artists/<%= @artist.id %>"
+
+<a href="/writers/<%= @writer.id %>/edit"><button>Edit</button></a>
+<a href="/writers/<%= @writer.id %>"
   data-confirm="You sure?"
   data-method="delete"
   rel="nofollow"><button>Delete</button></a>

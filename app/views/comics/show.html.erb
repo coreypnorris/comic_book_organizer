@@ -1,8 +1,19 @@
-<h1><%= @comic.name %></h1>
+<h1><%= @comic.name %> # <%= @comic.issue %></h1>
 
+<h4>Artists</h4>
 <ul>
-  <li><%= @comic.issue %></li>
+  <% @comic.artists.each do |artist| %>
+    <li><%= artist.name %></li>
+  <% end %>
 </ul>
+
+<h4>Writers</h4>
+<ul>
+  <% @comic.writers.each do |writer| %>
+    <li><%= writer.name %></li>
+  <% end %>
+</ul>
+
 
 <a href="/comics/<%= @comic.id %>/edit"><button>Edit</button></a>
 <a href="/comics/<%= @comic.id %>"

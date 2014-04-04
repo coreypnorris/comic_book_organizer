@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140404171925) do
+ActiveRecord::Schema.define(version: 20140404225230) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,20 @@ ActiveRecord::Schema.define(version: 20140404171925) do
   create_table "comics", force: true do |t|
     t.string  "name"
     t.integer "issue"
+  end
+
+  create_table "comics_writers", force: true do |t|
+    t.integer "comic_id"
+    t.integer "writer_id"
+  end
+
+  create_table "covers", force: true do |t|
+    t.binary  "image"
+    t.integer "comic_id"
+  end
+
+  create_table "writers", force: true do |t|
+    t.string "name"
   end
 
 end
