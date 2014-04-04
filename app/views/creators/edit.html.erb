@@ -1,0 +1,13 @@
+<h1>Assign an Artist to <%= @comic.name %> <%= @comic.issue %> </h1>
+
+
+  <form action="/creators/<%= @comic.id %>/" method="post">
+    <input name="_method" type="hidden" value="patch">
+      <% @artists.each do |artist| %>
+      <input type="checkbox" name="artist" value="<%= artist.id %>"><%= artist.name %>
+    <% end %>
+    <button>Assign Artist</button>
+  </form>
+
+
+<a href="/"><button>Home</button></a>

@@ -20,4 +20,11 @@ LongBox::Application.routes.draw do
   match('artists/:id/edit', {via: :get, to: 'artists#edit'})
   match('artists/:id', {via: [:patch, :put], to: 'artists#update'})
   match('artists/:id', {via: :delete, to: 'artists#destroy'})
+
+  ##Creators Routes
+
+  match('creators', {via: :get, to: 'creators#index'})
+  match('creators/:id/edit', {via: :get, to: 'creators#edit'})
+  match('creators/:id', {via: [:patch, :put], to: 'creators#update'})
+  match('creators/:id', {via: :delete, to: 'creators#destroy'})
 end

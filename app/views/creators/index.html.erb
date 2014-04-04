@@ -1,0 +1,10 @@
+<h1>Creators</h1>
+
+<p>Click on a Comic to Update its Creator Information</p>
+
+<ul>
+  <% @comics.each do |comic| %>
+    <a href="/creators/<%= comic.id %>/edit"><li><%= comic.name %> # <%= comic.issue %></li></a>
+  <% end %>
+</ul>
+
