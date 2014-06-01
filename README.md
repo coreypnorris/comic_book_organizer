@@ -1,11 +1,7 @@
-README
+##Comic Book Organizer
 
-== Long Box Comic Book Collection Manager
+####This is a rails site for managing your comic book collection
 
-This little application is designed to allow a user to keep track of their comic book collection, sorting by issue, artists, writers, titles, etc.
+You can view a live version of this site on [heroku](http://desolate-garden-7034.herokuapp.com/).
 
-User Stories:
-
-As a collector, I want to enter titles and issues that I currently own.
-As a collector, I want to be able to view issues I own by artists, or writers.
-I want to be able to see all the issues of a title that I own, to see how close I am to completing various runs.
+We built this project while we were students at [Epicodus](http://www.epicodus.com/). [This exercise](http://www.learnhowtoprogram.com/lessons/build-your-own-site) was meant to give us free practice to help solidify our understanding of Rails.
